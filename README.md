@@ -2,256 +2,245 @@
 
 ## 1. Executive Summary
 
-Exploreon is a location-based adventure game that combines real-world exploration with digital rewards. Players discover hidden locations, solve puzzles, and collect unique digital tokens as proof of their achievements. The game promotes outdoor activity, problem-solving, and community engagement while utilizing modern technology for verification and rewards.
+Exploreon is an experience verification platform that combines World ID biometric verification, dynamic QR codes, and semi-fungible tokens (SFTs) to prove authentic human presence at events and locations. Users can collect and showcase digital proof of their real-world experiences, from attending concerts to completing unique adventures, all verified through secure biometric technology.
 
-## 2. Core Game Vision
+## 2. Core Vision
 
 ### Concept
-A global treasure hunt that transforms everyday locations into adventure sites. Players use their mobile devices to track locations, solve location-specific puzzles, and collect digital proof of their discoveries.
+A digital proof-of-experience platform that verifies and rewards real human presence at events and locations. Users prove their attendance through World ID biometric verification and dynamic QR codes, receiving unique digital tokens as verifiable proof of their experiences.
 
 ### Target Audience
-- Adventure seekers (18-35 years)
-- Outdoor activity enthusiasts
+- Event-goers and festival attendees
+- Adventure seekers
+- Experience collectors
+- Social media enthusiasts
 - Digital collectors
-- Community explorers
-- Tech-savvy individuals
 
 ### Unique Selling Points
-- Real-world exploration with digital rewards
-- Community-driven content creation
-- Secure verification system
-- Educational elements integrated into gameplay
-- Social features and competitions
+- Biometric verification ensures authentic human presence
+- Tamper-proof experience verification
+- Digital collectibles as proof of attendance
+- Social sharing and bragging rights
+- Integration with major events and venues
 
-## 3. Gameplay Mechanics
+## 3. Core Mechanics
 
-### Core Loop
-1. **Discover** - Find new locations through the app
-2. **Navigate** - Use in-game tools to reach the destination
-3. **Solve** - Complete location-specific challenges
-4. **Verify** - Confirm presence through the verification system
-5. **Collect** - Receive digital rewards and achievements
+### Verification System
+- **World ID Integration**
+  - Biometric verification through World ID
+  - Proof of unique humanity at each location
+  - Prevention of duplicate or bot verifications
+  - Privacy-preserving verification protocol
 
-### Key Features
+### Dynamic QR System
+- **Time-Sensitive QR Codes**
+  - Location-specific codes
+  - Time-stamped verification
+  - One-time use validation
+  - Event-specific encoding
+  - Anti-screenshot measures
 
-#### Location System
-- GPS-based tracking
-- Difficulty ratings for locations
-- Distance-based discovery mechanics
-- Indoor/outdoor location support
-- Seasonal location variants
+### Semi-Fungible Tokens (SFTs)
+- **Token Structure**
+  - ERC-1155 standard implementation
+  - Batch minting capabilities
+  - Shared experience identifiers
+  - Unique attendance metadata
+  - Time-stamped verification data
 
-#### Challenge System
-- Location-specific puzzles
-- Photo challenges
-- Trivia questions
-- Time-based challenges
-- Community-created challenges
+## 4. Use Cases
 
-#### Verification Mechanism
-- Dynamic QR code scanning
-- Location validation
-- Time-stamped check-ins
-- Anti-spoofing measures
-- Backup verification methods
+### Event Attendance
+- **Concerts**
+  - Proof of attendance at specific performances
+  - VIP area access verification
+  - Meet-and-greet confirmations
+  - Festival day tracking
+  - Special moment captures
 
-#### Reward System
-- Digital collectibles
-- Achievement badges
-- Experience points
-- Leaderboard rankings
-- Special event rewards
+### Unique Experiences
+- **Adventure Activities**
+  - Skydiving completion proof
+  - Hiking summit achievements
+  - Scuba diving certifications
+  - Rock climbing accomplishments
+  - Marathon participation
 
-## 4. Technical Requirements
+### Exclusive Access
+- **Special Venues**
+  - Private club attendance
+  - Exclusive restaurant visits
+  - Gallery opening nights
+  - Fashion show presence
+  - Limited access events
 
-### Mobile Application
-- **Platform**: iOS and Android
-- **Minimum Requirements**:
-  - GPS capability
-  - Camera access
-  - Internet connectivity
-  - 2GB RAM
-  - 100MB storage
+### Achievement Tracking
+- **Personal Milestones**
+  - Travel achievements
+  - Sports event attendance
+  - Educational completions
+  - Cultural experiences
+  - Community gatherings
 
-### Backend Infrastructure
-- Cloud-based server architecture
-- Real-time location services
-- Secure user authentication
-- Data encryption
-- Automated backup systems
+## 5. Technical Architecture
 
-### Database Structure
-- User profiles
-- Location data
-- Challenge records
-- Achievement tracking
-- Leaderboard statistics
+### World ID Integration
+- **Verification Flow**
+  - World ID SDK implementation
+  - Biometric data processing
+  - Zero-knowledge proof generation
+  - Verification result handling
+  - Privacy protection measures
 
-## 5. User Interface
+### Dynamic QR Generation
+- **QR System**
+  - Time-based code generation
+  - Location data embedding
+  - Encryption protocols
+  - Verification checking
+  - Real-time updates
 
-### Main Screens
-- Home Dashboard
-- Map View
-- Challenge Interface
-- Collection Gallery
-- Social Hub
-- Settings
+### Blockchain Implementation
+- **Smart Contracts**
+  - ERC-1155 token contract
+  - Verification logic
+  - Minting controls
+  - Metadata management
+  - Access controls
 
-### Key UI Elements
-- Interactive map
-- Progress indicators
-- Challenge cards
-- Reward animations
-- Navigation tools
+### Backend Services
+- **API Structure**
+  - World ID verification endpoints
+  - QR code management
+  - Token minting service
+  - User profile handling
+  - Experience tracking
 
-## 6. Content Strategy
+## 6. Experience Flow
 
-### Location Types
-- Historical sites
-- Natural landmarks
-- Urban discoveries
-- Hidden gems
-- Special events
+### Pre-Experience
+1. User discovers verifiable experience
+2. Downloads app if new user
+3. Sets up World ID verification
+4. Claims or purchases experience access
 
-### Challenge Categories
-- Photography
-- Puzzle-solving
-- Physical activities
-- Knowledge tests
-- Social tasks
+### On-Site Verification
+1. Arrives at location/event
+2. Accesses dynamic QR code
+3. Completes World ID verification
+4. Receives real-time confirmation
 
-### Reward Tiers
-- Common discoveries
-- Rare finds
-- Epic achievements
-- Legendary completions
-- Limited edition events
+### Post-Experience
+1. Receives SFT in wallet
+2. Views experience metadata
+3. Shares achievement socially
+4. Explores related experiences
+5. Joins community discussions
 
-## 7. Monetization
+## 7. Token Economics
 
-### Revenue Streams
-- Premium memberships
-- Special event passes
-- Extra challenge packs
-- Customization options
-- Location submission tools
+### SFT Structure
+- **Token Properties**
+  - Experience category identifier
+  - Unique attendance metadata
+  - Timestamp and location data
+  - Rarity indicators
+  - Social sharing features
 
-### Premium Features
-- Advanced tracking tools
-- Extended challenge options
-- Exclusive locations
-- Special rewards
-- Priority support
+### Distribution Model
+- **Minting Rules**
+  - Event-based allocation
+  - Attendance verification requirements
+  - Time-window restrictions
+  - Capacity limitations
+  - Special edition releases
 
 ## 8. Development Roadmap
 
-### Phase 1: Foundation (Months 1-3)
-- Core app development
-- Basic location system
-- Essential features
-- Initial testing
+### Phase 1: Foundation (Months 1-2)
+- World ID integration
+- Dynamic QR system
+- Basic smart contract development
 
-### Phase 2: Enhancement (Months 4-6)
-- Advanced features
+### Phase 2: Core Features (Months 3-4)
+- SFT implementation
+- Verification flow completion
+- Experience tracking system
+
+### Phase 3: Enhancement (Months 5-6)
+- Social features
+- Partner integration
 - Community tools
-- Social integration
-- Beta testing
 
-### Phase 3: Polish (Months 7-8)
-- Performance optimization
-- Content expansion
-- User feedback implementation
-- Final testing
-
-### Phase 4: Launch (Month 9)
-- Public release
-- Marketing campaign
+### Phase 4: Launch (Month 7)
+- Public beta
+- Initial events
 - Community building
-- Support system activation
 
-## 9. Marketing Strategy
+## 9. Security Measures
 
-### Channels
+### Verification Security
+- Multi-factor authentication
+- Biometric data protection
+- QR code encryption
+- Anti-spoofing measures
+- Real-time verification checks
+
+### Smart Contract Security
+- Access control implementation
+- Rate limiting
+- Emergency pause functionality
+- Upgrade mechanisms
+- Audit requirements
+
+## 10. Integration Opportunities
+
+### Event Partners
+- Music festivals
+- Sports events
+- Cultural venues
+- Adventure companies
+- Educational institutions
+
+### Technology Partners
+- Ticketing platforms
+- Event management systems
 - Social media platforms
-- Gaming communities
-- Outdoor activity groups
-- Tech forums
-- Local events
-
-### Key Messages
-- "Adventure Awaits"
-- "Discover Your World"
-- "Every Location Tells a Story"
-- "Connect, Explore, Achieve"
-
-## 10. Risk Management
-
-### Technical Risks
-- GPS accuracy issues
-- Server load management
-- Data security
-- Device compatibility
-
-### User Experience Risks
-- Location accessibility
-- Challenge difficulty balance
-- Verification reliability
-- Community management
-
-### Mitigation Strategies
-- Regular testing protocols
-- Scalable infrastructure
-- Community feedback systems
-- Content moderation tools
+- Digital wallet providers
+- Experience marketplaces
 
 ## 11. Success Metrics
 
 ### Key Performance Indicators
-- Daily active users
-- Challenge completion rates
+- Verified experiences
+- Active users
+- Partner integrations
+- Token transactions
 - User retention
-- Revenue per user
-- Community engagement
 
 ### Quality Metrics
-- App stability
-- Location accuracy
-- Challenge fairness
+- Verification success rate
+- System uptime
+- Response time
 - User satisfaction
-- Support response time
+- Partner satisfaction
 
-## 12. Support and Maintenance
+## 12. Legal Considerations
 
-### User Support
-- In-app help system
-- FAQ documentation
-- Email support
-- Community forums
-- Bug reporting system
-
-### Regular Updates
-- Weekly content updates
-- Monthly feature releases
-- Quarterly major updates
-- Seasonal events
-- Community challenges
-
-## 13. Legal Considerations
-
-### Privacy Policy
-- Location data usage
-- User information handling
-- Data storage practices
-- Sharing policies
-- User rights
+### Privacy Compliance
+- Biometric data handling
+- User consent management
+- Data retention policies
+- Right to be forgotten
+- Cross-border compliance
 
 ### Terms of Service
 - User responsibilities
-- Content guidelines
-- Safety requirements
-- Liability limitations
+- Verification requirements
+- Token ownership rights
+- Platform usage rules
 - Dispute resolution
 
 ---
 
-This document serves as the foundation for Exploreon's development and should be updated regularly as the project evolves. All team members should refer to this document for guidance while maintaining flexibility for improvements and adjustments based on development progress and user feedback.
+This document serves as the foundation for Exploreon's development, focusing on human verification through World ID, dynamic QR codes, and experience-based semi-fungible tokens. Regular updates will be made based on development progress and partner feedback.
