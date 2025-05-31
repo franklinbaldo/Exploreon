@@ -244,3 +244,8 @@ A digital proof-of-experience platform that verifies and rewards real human pres
 ---
 
 This document serves as the foundation for Exploreon's development, focusing on human verification through World ID, dynamic QR codes, and experience-based semi-fungible tokens. Regular updates will be made based on development progress and partner feedback.
+
+
+## Project Roadmap and Tasks
+
+A detailed breakdown of project tasks and phases can be found in the [TODO.md](TODO.md) file. This file outlines the actionable steps from initial setup to post-launch maintenance, providing a clear roadmap for development.
