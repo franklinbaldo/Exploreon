@@ -9,7 +9,13 @@ Refer to `PID.md` for the overall project vision, scope, and objectives.
     - [ ] Finalize choice of specific blockchain (e.g., Polygon, Arbitrum, Optimism) for ERC-1155 SFTs.
     - [ ] Set up development environments for blockchain, backend, and frontend.
     - [ ] Initialize Git repository with main branches (main, develop).
-    - [ ] Define detailed data models for Users, Experiences, SFTs, Verifications.
+    - [x] Create the initial monorepo directory structure as per `DECISIONS.md` (`blockchain/`, `backend/`, `frontend/`, `packages/common-types/`).
+    - [ ] Initialize Hardhat project in `blockchain/` directory.
+    - [ ] Configure Hardhat for Polygon (Mumbai testnet and mainnet).
+    - [ ] Initialize Node.js project in `backend/` directory and install initial dependencies (Express.js).
+    - [ ] Initialize React Native project in `frontend/` directory.
+    - [ ] Set up Prettier and ESLint configurations for the monorepo.
+    - [ ] Define detailed data models for Users, Experiences, SFTs, Verifications and implement initial database schema in backend project.
     - [ ] Establish CI/CD pipeline basics (e.g., GitHub Actions for linting, basic tests).
 - [ ] **World ID Integration - Initial Setup:**
     - [ ] Sign up for World ID developer access.
