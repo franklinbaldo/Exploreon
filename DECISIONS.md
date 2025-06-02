@@ -27,6 +27,7 @@ Each decision will be documented with:
     - Development will proceed using Polygon PoS testnets (e.g., Mumbai) and mainnet.
     - Smart contracts will be written in Solidity and deployed on Polygon.
     - Users will need a Polygon-compatible wallet and MATIC tokens for gas fees (though the platform might explore gasless transactions for users in the future).
+    - **World Chain Context:** While Exploreon's initial blockchain target is Polygon PoS, the team acknowledges the existence and philosophy of World Chain (an L2 designed for 'real humans'). Future integrations or strategic shifts might consider World Chain if its ecosystem and features align with Exploreon's long-term goals, particularly if deeper integration with the World App user base is desired.
 
 ---
 
@@ -156,6 +157,39 @@ A variation of the GitFlow branching model is recommended:
 - **Impact/Consequences:**
     - Developers need to adhere to the branching strategy and commit message conventions.
     - CI/CD pipelines will be configured based on this branching model (e.g., deployments from `main`, builds from `develop`).
+
+---
+
+## Major Decision: World ID Integration Strategy
+
+- **Date:** 2025-06-03 (Placeholder, adjust as needed)
+- **Context:** Effective and secure integration with World ID is crucial for the "proof of presence" and Sybil resistance features of Exploreon. This section outlines the core strategies for this integration.
+- **Decision/Guidance:**
+    - **Backend Verification of Proofs:** All World ID proofs presented by users for experience verification *must* be verified through a secure backend call to the World ID service (`/api/v2/verify/{app_id}` or GraphQL endpoint). Frontend verification alone is insufficient due to security risks.
+    - **Use of "Actions":** Exploreon will define specific 'Actions' in the World ID Developer Portal for each distinct experience or type of verification (e.g., 'exploreon-concert-checkin-event123', 'exploreon-location-visit-poi456'). These actions will be used in the `Verify` command.
+    - **Nullifier Hash Management:** The backend must correctly handle `nullifier_hash` values returned from successful World ID verifications. This hash, unique per user per action, is the primary mechanism to prevent a single user from verifying the same unique experience multiple times.
+    - **Choice of Verification Level:** Exploreon will primarily target `VerificationLevel.Orb` for its experiences to ensure the highest level of Sybil resistance. The specific level may be configurable per experience type in the future if deemed necessary. This will be requested in the `Verify` command.
+    - **Developer Portal Usage:** The World ID Developer Portal is the central point for managing Exploreon's application settings, credentials (Client ID, Secret, API Keys), and defining/managing 'Actions'. All sensitive credentials must be stored securely and accessed only by the backend.
+    - **API Key Security for Backend:** API keys obtained from the World ID Developer Portal for backend verification must be treated as highly sensitive secrets, stored securely (e.g., environment variables, secret manager), and only used for server-to-server communication via `Authorization: Bearer $API_KEY` header.
+- **Reasoning:** These strategies prioritize security, prevent abuse (e.g., multiple claims by the same person for a unique event), and align with World ID best practices for robust integration. Using distinct actions provides granularity and better control over verification contexts.
+- **Impact/Consequences:**
+    - Backend development must include logic for World ID proof verification and nullifier hash management.
+    - Secure storage mechanisms for API keys and other credentials are required.
+    - The setup and management of the World ID Developer Portal will be an ongoing administrative task.
+
+---
+
+## Guidance: Data Privacy and Consent for World ID
+
+- **Date:** 2025-06-03 (Placeholder, adjust as needed)
+- **Context:** Ensuring user privacy and obtaining informed consent are paramount when integrating biometric verification systems like World ID.
+- **Decision/Guidance:**
+    - **Data Minimization:** When integrating with World ID, Exploreon will request only the minimum necessary information/scope required for its functionality (i.e., proof of personhood for a specific action).
+    - **User Consent:** Clear user consent must be obtained before initiating any World ID verification process. Users should be informed about what is being verified and why.
+- **Reasoning:** Adherence to data privacy principles builds user trust and ensures compliance with potential regulatory requirements.
+- **Impact/Consequences:**
+    - Frontend UI/UX must include clear consent flows before World ID interaction.
+    - Backend systems must be designed to handle only the necessary data from World ID.
 
 ---
 

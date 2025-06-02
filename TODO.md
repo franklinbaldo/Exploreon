@@ -19,9 +19,10 @@ Refer to `PID.md` for the overall project vision, scope, and objectives.
     - [ ] Establish CI/CD pipeline basics (e.g., GitHub Actions for linting, basic tests).
 - [ ] **World ID Integration - Initial Setup:**
     - [ ] Sign up for World ID developer access.
-    - [ ] Integrate World ID SDK into a prototype application/environment.
-    - [ ] Test basic biometric verification flow (proof of personhood).
-    - [ ] Research secure handling of World ID verification results.
+    - [ ] Integrate World ID SDK (e.g., IDKit) into a prototype application/environment, focusing on the client-side flow for initiating verification.
+    - [ ] Test basic biometric verification flow, including requesting appropriate `verification_level` (initially targeting Orb level).
+    - [ ] Plan for secure handling of World ID verification results, including `nullifier_hash` and proof, in preparation for backend verification.
+    - [ ] Set up Exploreon application, team, and initial 'Actions' (e.g., 'exploreon-experience-verification') in the World ID Developer Portal; securely store Client ID, Secret, and API Keys.
 - [ ] **Dynamic QR System - Core Logic:**
     - [ ] Design QR code payload structure (e.g., event ID, timestamp, location hints).
     - [ ] Develop backend logic for generating time-sensitive, single-use QR codes.
@@ -40,13 +41,14 @@ Refer to `PID.md` for the overall project vision, scope, and objectives.
         - Verification submission (World ID result + QR data).
         - SFT minting request.
     - [ ] Stub out these API endpoints with mock responses.
+    - [ ] Stub out backend endpoint for receiving World ID verification data (proof, nullifier_hash, action, signal) from the frontend.
 
 ## Phase 2: Core Features (Target: Months 3-4)
 
 - [ ] **Verification Flow - End-to-End:**
     - [ ] Frontend: Implement UI for QR code scanning.
     - [ ] Frontend: Implement UI for initiating World ID verification.
-    - [ ] Backend: Process verification requests (validate QR, World ID result).
+    - [ ] Backend: Implement robust verification processing, including validating QR codes and **critically, performing backend verification of World ID proofs via World ID API** using the received proof, nullifier_hash, action, and signal.
     - [ ] Backend: Trigger SFT minting upon successful verification.
     - [ ] Frontend: Display confirmation of successful verification and SFT receipt.
 - [ ] **SFT Implementation - Full Features:**
@@ -65,6 +67,10 @@ Refer to `PID.md` for the overall project vision, scope, and objectives.
 - [ ] **Security Hardening - Initial Pass:**
     - [ ] Review and secure API endpoints (authentication, authorization).
     - [ ] Protect against common vulnerabilities (e.g., replay attacks on QR codes).
+    - [ ] Implement secure storage and management of World ID API Keys on the backend.
+    - [ ] Ensure World ID `nullifier_hash` is used effectively to prevent replay attacks / duplicate verifications for the same action by the same user.
+- [ ] **Legal and User Consent:**
+    - [ ] Design and implement user consent flow for World ID verification, clearly explaining data usage and purpose, adhering to data minimization principles.
 
 ## Phase 3: Enhancement (Target: Months 5-6)
 
@@ -124,6 +130,7 @@ Refer to `PID.md` for the overall project vision, scope, and objectives.
     - [ ] Optimize costly operations.
 - [ ] **Legal & Compliance Review:**
     - [ ] Continuously review and update privacy policies and terms of service.
+    - [ ] Periodically review and update World ID integration practices based on Worldcoin SDK updates and security advisories.
 - [ ] **Partnership Expansion:**
     - [ ] Actively seek and onboard new event and technology partners.
 

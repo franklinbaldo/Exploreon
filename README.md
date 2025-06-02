@@ -1,9 +1,9 @@
 # Exploreon - Proof of Experience Platform
 
-Exploreon is an experience verification platform that uses World ID biometric verification, dynamic QR codes, and semi-fungible tokens (SFTs) to prove authentic human presence at events and locations. Users can collect and showcase digital proof of their real-world experiences.
+Exploreon is an experience verification platform that uses World ID biometric verification, dynamic QR codes, and semi-fungible tokens (SFTs) to prove authentic human presence at events and locations. Exploreon leverages World ID, a core component of the broader World project (which also includes the World App and WLD token), to ensure authentic human presence. Users can collect and showcase digital proof of their real-world experiences.
 
 ## Core Features
-- Biometric verification via World ID.
+- **Biometric Verification via World ID:** Utilizes World ID, a privacy-preserving digital identity solution, to allow users to prove their unique humanity online without revealing sensitive personal data. This is achieved through a cryptographic proof of personhood, enhancing the authenticity of experience claims.
 - Dynamic QR codes for on-site check-in.
 - ERC-1155 Semi-Fungible Tokens (SFTs) as digital collectibles representing experiences.
 - A platform for users to manage and showcase their verified experiences.
