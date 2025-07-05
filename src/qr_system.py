@@ -38,6 +38,39 @@ class DynamicQRGenerator:
 
         return qr_data_string, expiry_timestamp
 
+    def parse_qr_code_data(self, qr_data_string: str) -> dict | None:
+        """Parses a QR code data string into its component fields.
+
+        Args:
+            qr_data_string: The raw string embedded in the QR code.
+
+        Returns:
+            Dictionary with keys ``event_id``, ``location_id``, ``timestamp`` and
+            ``signature`` if parsing succeeds, otherwise ``None`` when the
+            string is malformed.
+        """
+        try:
+            parts = {}
+            for item in qr_data_string.split("|"):
+                if ":" not in item:
+                    return None
+                key, value = item.split(":", 1)
+                parts[key] = value
+
+            if not {"E", "LID", "TS", "S"}.issubset(parts.keys()):
+                return None
+
+            timestamp = int(parts["TS"])
+
+            return {
+                "event_id": parts["E"],
+                "location_id": parts["LID"],
+                "timestamp": timestamp,
+                "signature": parts["S"],
+            }
+        except Exception:
+            return None
+
     def verify_qr_code_data(self, qr_data_string: str, current_location_id_for_verification: str, current_time_for_verification: int, validity_window_seconds: int = 300) -> bool:
         """
         Verifies the dynamic QR code data.
