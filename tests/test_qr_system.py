@@ -46,6 +46,21 @@ class TestDynamicQRSystem(unittest.TestCase):
         self.assertGreaterEqual(expiry_ts, current_time + self.default_duration - 5) # Allow 5s slack
         self.assertLessEqual(expiry_ts, current_time + self.default_duration + 5)
 
+    def test_parse_qr_code_data_valid(self):
+        qr_data, _ = self.generator.generate_qr_code_data(
+            self.event_id, self.location_id, duration_seconds=self.default_duration
+        )
+        parsed = self.generator.parse_qr_code_data(qr_data)
+        assert parsed is not None
+        self.assertEqual(parsed["event_id"], self.event_id)
+        self.assertEqual(parsed["location_id"], self.location_id)
+        self.assertIsInstance(parsed["timestamp"], int)
+        self.assertEqual(len(parsed["signature"]), 16)
+
+    def test_parse_qr_code_data_malformed(self):
+        parsed = self.generator.parse_qr_code_data("E:bad|no_colon")
+        self.assertIsNone(parsed)
+
 
     def test_verify_qr_code_data_valid(self):
         qr_data, _ = self.generator.generate_qr_code_data(
