@@ -272,6 +272,25 @@ A digital proof-of-experience platform that verifies and rewards real human pres
 - Platform usage rules
 - Dispute resolution
 
+## 13. Development & Testing
+
+To ensure the quality and reliability of the codebase, we maintain comprehensive test coverage metrics.
+
+### Running Tests
+
+We use `pytest` for testing and `coverage.py` for metrics. A convenience script is provided to run tests and generate a coverage report:
+
+```bash
+./run_tests.sh
+```
+
+This script will:
+1. Install necessary dependencies (if missing).
+2. Run the test suite.
+3. Generate a coverage report in the terminal.
+4. Generate a detailed HTML report in `htmlcov/index.html`.
+5. Fail if test coverage falls below 70%.
+
 ---
 
 This document serves as the foundation for Exploreon's development, focusing on human verification through World ID, dynamic QR codes, and experience-based semi-fungible tokens. Regular updates will be made based on development progress and partner feedback.
